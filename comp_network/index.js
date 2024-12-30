@@ -9,12 +9,21 @@ import * as randomnode from './Generators/random_node.js'
 import * as edgewidth from './Util/edgewidth.js'
 document.getElementById("graphGenerator").addEventListener('click', () => {
   let size = document.getElementById("node_count").value ; 
-  size = size || 15 ; // DEF VAL
+  size = size || 8 ; // DEF VAL
                   graphGenerator.graphGenerator(size) ; // GRAPHGENERATOR BY ENTERING SIZE(BEYLER BURDA SIZE YAZIYOR SIZEYI YUKARDAN DEGİSTİRİP DENEYEBİLİRSİNİZ)
-                  edge_genMultiplexer(endosrenyl.erdosRenylModel(size,0.6),size) ; 
+                  edge_genMultiplexer(endosrenyl.erdosRenylModel(size,0.2),size) ; 
     //                  console.log("edgelist",genedge.edgeList);
                  console.log(randomnode.nodeList) ; 
-                  edgewidth.findEdges(2);
+                  
         //  barabasi_albert.barabasiAlbert(10,5,2) ; 
+
+                  for (let i = 0 ; i < size ; i ++) {
+                    edgewidth.findEdges(i);
+                  }
+                  console.log(edgewidth.neigborDest);
+
+
+
+
         } 
       ) ; 

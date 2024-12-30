@@ -1,8 +1,9 @@
 import * as nodeInfo from "../Generators/random_node.js"
-let neigborDestfor2 = [] ; 
+export let neigborDest = [] ; 
 export function findEdges(nodeId) {
-  
+  var currentNodeDest = [] ;
 
+      let temp_Node = nodeInfo.nodeList ;
 
  for (let i = 0 ; i < nodeInfo.nodeList[nodeId].node_connections.length ; i++) {
 
@@ -12,19 +13,18 @@ export function findEdges(nodeId) {
     data.root = data.dest ; 
     data.dest = tempdata ; 
   }
-                   neigborDestfor2.push(
+                      currentNodeDest.push(
 
                         `${data.dest}+${document.getElementById(nodeInfo.nodeList[nodeId].node_connections[i]).style.width}`
 
                    );
                       
-                  
+  
 
             }
-                  console.log(neigborDestfor2[0]);
+            neigborDest.push(currentNodeDest) ; 
+               
                   
-                 var data2 =  parseNodeString(neigborDestfor2[0]);
-                 console.log(data2);
 }
 function parseEdgeString(edgeString) {
     // Regex ile root ve dest değerlerini ayıklıyoruz

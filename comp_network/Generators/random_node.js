@@ -17,7 +17,7 @@ export function createNewNode(i) {
   var xCoordinate = Math.floor(Math.random() * elem_width) ; 
   var yCoordinate = Math.floor(Math.random() * elem_height) ; 
   var node =  document.createElement('div');
-  node.id = `node${i+1}`;
+  node.id = `node${i}`;
   node.className = "nodes";
   node.style.left = `${xCoordinate}px` ; 
   node.style.top = `${yCoordinate}px` ; 
